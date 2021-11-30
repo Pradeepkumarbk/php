@@ -17,7 +17,7 @@ pipeline {
                 sh 'mv composer.phar /usr/local/bin/composer'
                 sh 'chmod +x /usr/local/bin/composer'
                 sh 'apt-get -y install php-gd php-xml php7.4-mbstring'
-                sh 'composer update' 
+                sh 'composer install' 
                 sh 'phpunit tests/'
             }
         }
