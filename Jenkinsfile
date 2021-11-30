@@ -14,7 +14,6 @@ pipeline {
                 sh 'ls'
                 sh 'php -version'
                 sh 'phpunit --version'
-                sh 'composer update'
                 sh 'phpunit tests/'
             }
         }
