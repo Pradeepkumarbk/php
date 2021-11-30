@@ -10,7 +10,6 @@ pipeline {
             steps {
                 echo 'Run unit tests from the source code' 
                 sh 'cat /etc/os-release '
-                sh ' USER root'
                 sh 'apt update && apt upgrade'
                 sh ' apt install software-properties-common'
                 sh ' add-apt-repository ppa:ondrej/php'
