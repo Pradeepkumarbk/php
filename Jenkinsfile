@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent { docker { image 'php:7.3' } } 
     stages {
         stage('Compile') {
             steps {
@@ -9,16 +9,7 @@ pipeline {
         stage('Run Unit Tests') {
             steps {
                 echo 'Run unit tests from the source code' 
-                sh 'cat /etc/os-release '
-                sh 'apt clean & apt-get -y update && apt-get -y upgrade'
-                sh ' apt -y install php7.4'
                 sh 'php -version'
-                sh 'curl -Ss https://getcomposer.org/installer | php'
-                sh 'mv composer.phar /usr/local/bin/composer'
-                sh 'chmod +x /usr/local/bin/composer'
-                sh 'apt-get -y install php-gd php-xml php7.4-mbstring'
-                sh 'composer install' 
-                sh 'apt-get install -y phpunit'
                 sh 'phpunit tests/'
             }
         }
