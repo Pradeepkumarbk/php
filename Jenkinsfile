@@ -17,7 +17,7 @@ pipeline {
                 sh 'mv composer.phar /usr/local/bin/composer'
                 sh 'chmod +x /usr/local/bin/composer'
                 sh 'php --ini'
-                sh 'composer install' 
+                sh 'composer update' 
                 sh 'phpunit tests/'
             }
         }
