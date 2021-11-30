@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'node:14-alpine' }
+        docker { image 'php:7.3' }
     }
     stages {
         stage('Compile') {
