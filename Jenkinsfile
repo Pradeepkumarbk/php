@@ -16,6 +16,7 @@ pipeline {
                 sh 'curl -Ss https://getcomposer.org/installer | php'
                 sh 'mv composer.phar /usr/local/bin/composer'
                 sh 'chmod +x /usr/local/bin/composer'
+                sh 'php --ini'
                 sh 'composer install' 
                 sh 'phpunit tests/'
             }
