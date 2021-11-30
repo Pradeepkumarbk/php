@@ -14,7 +14,7 @@ pipeline {
                 sh ' apt -y install php7.4'
                 sh 'php -version'
                 sh 'ls'
-                sh 'composer update' 
+                sh 'composer install' 
                 sh 'phpunit tests/'
             }
         }
