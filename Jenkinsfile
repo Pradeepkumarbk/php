@@ -1,18 +1,16 @@
 pipeline {
-    agent {
-        docker { image 'php:7.3' }
-    }
+    agent any
     stages {
-        stage('Compile') {
-            steps {
-                echo 'Compile the source code' 
+        stage('Build') {
+            agent {
+                docker {
+                    image 'gradle:6.7-jdk11'
+                    // Run the container on the node specified at the top-level of the Pipeline, in the same workspace, rather than on a new node entirely:
+                    reuseNode true
+                }
             }
-        }
-        stage('Run Unit Tests') {
             steps {
-                echo 'Run unit tests from the source code' 
-                sh 'php -version'
-                sh 'phpunit tests/'
+                sh 'gradle --version'
             }
         }
     }
