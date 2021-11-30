@@ -12,6 +12,7 @@ pipeline {
             steps {
                 echo 'Run unit tests from the source code' 
                 sh 'php -version'
+                sh 'composer'
                 sh 'phpunit tests/'
             }
         }
