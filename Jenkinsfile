@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'php:7.3' }
+        docker { image 'Pradeepkumar95/php:v1'}
     }
     stages {
         stage('Compile') {
@@ -10,9 +10,10 @@ pipeline {
         }
         stage('Run Unit Tests') {
             steps {
-                echo 'Run unit tests from the source code' 
+                echo 'Run unit tests from the source code'
+                sh 'ls'
                 sh 'php -version'
-                sh 'composer'
+                sh 'composer install'
                 sh 'phpunit tests/'
             }
         }
