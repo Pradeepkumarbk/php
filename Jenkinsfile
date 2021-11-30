@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'Pradeepkumar95/php:v1'}
+        docker { image 'pradeepkumar95/php:v1'}
     }
     stages {
         stage('Compile') {
