@@ -14,6 +14,10 @@ pipeline {
                 sh 'ls'
                 sh 'php -version'
                 sh 'phpunit --version'
+                sh 'apt-get -y update'
+                sh 'apt install -y php-xml'
+                sh 'apt-get install -y php-mbstring'
+                sh 'composer update'
                 sh 'phpunit tests/'
             }
         }
