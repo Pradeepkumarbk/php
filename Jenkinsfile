@@ -13,6 +13,7 @@ pipeline {
                 sh 'apt clean & apt-get -y update && apt-get -y upgrade'
                 sh ' apt -y install php7.4'
                 sh 'php -version'
+                sh 'phpunit tests/'
             }
         }
     }
