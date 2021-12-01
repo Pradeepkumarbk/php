@@ -13,6 +13,9 @@ pipeline {
                 echo 'Run unit tests from the source code'
                 sh 'composer update'
                 sh 'phpunit tests/'
+                sh 'curl -Os https://uploader.codecov.io/latest/linux/codecov'
+                sh 'chmod +x codecov'
+                sh './codecov -t 96348b24-fbda-4dba-ab76-4d3d1dca227c'
             }
         }
     }
