@@ -12,6 +12,7 @@ pipeline {
             steps {
                 echo 'Run unit tests from the source code'
                 sh 'composer update'
+                sh 'apt install -y php-xdebug'
                 sh 'phpunit tests/ --coverage-clover coverage.xml'
                 sh 'curl -Os https://uploader.codecov.io/latest/linux/codecov'
                 sh 'chmod +x codecov'
